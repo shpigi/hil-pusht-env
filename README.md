@@ -9,6 +9,10 @@ Standalone PushT environment package with:
 - Built-in Xbox teleoperation support
 - Built-in render overlays (action arrow, time bar, coverage bar, teleop indicator)
 
+## Environment Preview
+
+![PushT environment snapshot (512x512)](assets/pusht_env_snapshot_512.png)
+
 ## Install
 
 ```bash
