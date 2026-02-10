@@ -51,25 +51,6 @@ make test-venv
 make test-mamba
 ```
 
-## Environment Snapshot
-
-Captured on `2026-02-10 00:23:16Z` (UTC):
-
-- OS: `Linux 6.14.0-37-generic x86_64 GNU/Linux`
-- System Python: `Python 3.12.10`
-- System pip: `pip 25.1.1`
-- Mamba: `2.1.1`
-- Shared-control Python: `Python 3.10.19`
-- Shared-control pip: `pip 25.3`
-- Shared-control test stack:
-  - `gymnasium 1.2.2`
-  - `numpy 2.2.6`
-  - `opencv-python 4.12.0`
-  - `pygame 2.6.1`
-  - `pymunk 6.11.1`
-  - `shapely 2.1.2`
-  - `pytest 9.0.2`
-
 ## Quickstart
 
 ```python
