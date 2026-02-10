@@ -1,5 +1,7 @@
 # Agent Rules
 
+See `agents/ALLOWLIST.md` for the repo command-prefix allowlist used to speed up GitHub and CI operations.
+
 ## Python Environment
 - Default to the local virtual environment named `.venv-hil-pusht` at repo root.
 - If local venv dependency installation is blocked, use the `shared-control` mamba environment.
@@ -35,3 +37,21 @@
   - `make setup-venv`
   - `make test-venv`
   - `make test-mamba`
+
+## GitHub Operations
+- Use `git` + `gh` directly from this repo; do not rely on manual website-only steps.
+- Standard branch flow:
+  1. `git checkout -b <feature-branch>`
+  2. implement + test
+  3. `git add -A && git commit -m "<message>"`
+  4. `git push -u origin <feature-branch>`
+  5. `gh pr create --fill`
+- Standard mainline update flow (when instructed to ship directly):
+  1. run tests (`make test-mamba` or local venv equivalent)
+  2. `git add -A && git commit -m "<message>"`
+  3. `git push origin main`
+- CI and run status checks:
+  - `make gh-status`
+  - `make gh-ci`
+- If `gh` API access is unavailable in a restricted environment, still push via `git` and treat GitHub Actions on the remote as the source of truth for pass/fail.
+- Resolve CI failures before declaring work complete.

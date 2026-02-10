@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: setup-venv install-venv test-venv test-mamba
+.PHONY: setup-venv install-venv test-venv test-mamba gh-status gh-ci
 
 setup-venv:
 	bash scripts/setup_venv.sh
@@ -14,3 +14,9 @@ test-venv:
 test-mamba:
 	bash scripts/test_shared_control.sh
 
+gh-status:
+	gh repo view --web=false
+	gh run list --limit 10
+
+gh-ci:
+	gh run watch --exit-status
